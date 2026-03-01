@@ -36,7 +36,6 @@ def load_images(path1: str, path2: str):
     if img2 is None:
         raise FileNotFoundError(f"Could not read image: {path2}")
 
-    # Ensure same size (simplest: resize img2 to img1)
     if img1.shape != img2.shape:
         img2 = cv2.resize(img2, (img1.shape[1], img1.shape[0]), interpolation=cv2.INTER_AREA)
 
@@ -55,12 +54,11 @@ def main():
     args = parser.parse_args()
 
     if not (0.0 <= args.d <= 1.0):
-        raise ValueError("--d must be between 0 and 1")
+        raise ValueError("--d (transparency factor) must be between 0 and 1")
 
     img1, img2 = load_images(args.img1, args.img2)
     ensure_dir(args.out)
 
-    # Run selected mode
     if args.mode == "transparency":
         result = transparency(img1, img2, args.d)
         out_name = f"transparency_d{args.d:.2f}.png"
