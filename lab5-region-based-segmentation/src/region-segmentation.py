@@ -58,13 +58,6 @@ def kmeans_segment(rgb: np.ndarray, k: int = K) -> tuple[np.ndarray, np.ndarray]
     return segmented, labels_2d
  
  
-# ── Histogram helper ──────────────────────────────────────────────────────────
-def plot_histogram(ax: plt.Axes, gray: np.ndarray, title: str = "Histogram") -> None:
-    ax.hist(gray.ravel(), bins=256, range=(0, 256), color="steelblue", edgecolor="none")
-    ax.set_title(title, fontsize=9)
-    ax.set_xlabel("Intensity", fontsize=8)
-    ax.set_ylabel("Pixel count", fontsize=8)
-    ax.tick_params(labelsize=7)
  
  
 # ── Main processing pipeline ──────────────────────────────────────────────────
