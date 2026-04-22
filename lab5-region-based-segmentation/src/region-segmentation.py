@@ -105,10 +105,10 @@ def process(path: str, title: str, k: int = K) -> None:
         ax.axis("off") if label != "Grayscale Histogram" else None
  
     plt.tight_layout()
-    plt.show()
  
  
 if __name__ == "__main__":
     process(IMAGE_1_PATH, "Image 1 – Grayscale / Multiple Objects")
     process(IMAGE_2_PATH, "Image 2 – Person / Animal / Car")
     process(IMAGE_3_PATH, "Image 3 – Free Choice")
+    plt.show()   # one single show() at the very end
