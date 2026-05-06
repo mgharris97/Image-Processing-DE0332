@@ -73,7 +73,7 @@ def process(path: str, title: str, d: float = 0.5) -> None:
     out = enhance_contrast(rgb, d=d)
 
     fig, axes = plt.subplots(1, 4, figsize=(18, 5))
-    fig.suptitle(f"{title}  (d={d})", fontsize=13, fontweight="bold")
+    fig.suptitle(f"{title}  (transparency = {d})", fontsize=13, fontweight="bold")
 
     panels = [
         (rgb,             "Original"),
