@@ -176,9 +176,9 @@ def print_metrics_table(results: list) -> None:
 if __name__ == "__main__":
     runs = [
         # (reference path, degraded path, title, blend d)
-        (REF1, DEG1, "Image 1 - Well-lit (grain added)",        0.5),
-        (REF2, DEG2, "Image 2 - Hazy (underexposed further)",   0.3),
-        (REF3, DEG3, "Image 3 - Underexposed (contrast cut)",   0.4),
+        (REF1, DEG1, "Image 1 - Well-lit (grain added)",        0.1),
+        (REF2, DEG2, "Image 2 - Hazy (underexposed further)",   0.7),
+        (REF3, DEG3, "Image 3 - Underexposed (contrast cut)",   0.8),
     ]
 
     results = []
