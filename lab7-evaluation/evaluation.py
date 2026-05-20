@@ -146,8 +146,8 @@ def visualize(result: dict) -> None:
 
     panels = [
         (ref, "Reference (original)"),
-        (deg, f"Degraded\nMSE={md['MSE']:.1f}  PSNR={md['PSNR']:.2f} dB  SSIM={md['SSIM']:.4f}"),
-        (enh, f"Enhanced (PW6 pipeline)\nMSE={me['MSE']:.1f}  PSNR={me['PSNR']:.2f} dB  SSIM={me['SSIM']:.4f}"),
+        (deg, f"Degraded\nMean Sq. Err. (MSE)={md['MSE']:.1f}\nPeak Signal-to-Noise Ratio={md['PSNR']:.2f} dB\nStructural Similarity Index={md['SSIM']:.4f}"),
+        (enh, f"Enhanced (PW6 pipeline)\nMean Sq. Err. (MSE)={me['MSE']:.1f}\nPeak Signal-to-Noise Ratio={me['PSNR']:.2f} dB\nStructural Similarity Index={me['SSIM']:.4f}"),
     ]
 
     for ax, (img, label) in zip(axes, panels):
@@ -176,9 +176,9 @@ def print_metrics_table(results: list) -> None:
 if __name__ == "__main__":
     runs = [
         # (reference path, degraded path, title, blend d)
-        (REF1, DEG1, "Image 1 - Well-lit (grain added)",        0.1),
-        (REF2, DEG2, "Image 2 - Hazy (underexposed further)",   0.7),
-        (REF3, DEG3, "Image 3 - Underexposed (contrast cut)",   0.8),
+        (REF1, DEG1, "Image 1 - Well-lit (grain added)",        0.5),
+        (REF2, DEG2, "Image 2 - Hazy (underexposed further)",   0.3),
+        (REF3, DEG3, "Image 3 - Underexposed (contrast cut)",   0.4),
     ]
 
     results = []
